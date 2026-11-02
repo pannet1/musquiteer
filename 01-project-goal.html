@@ -120,6 +120,64 @@
   <h2>Objective</h2>
   <p>Develop a high-agility, autonomous micro-drone system named <strong>Musquiteer</strong> to detect, pursue, and neutralize mosquitoes indoors.</p>
 
+  
+<div style="margin: 24px 0;">
+  <h3 style="margin-bottom: 12px; color: #1e293b;">Figure 2: Concept of Operations (CONOPS) — Dynamic Target Interception</h3>
+  <svg viewBox="0 0 860 360" width="100%" height="auto" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:10px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+      </marker>
+      <marker id="arrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+      </marker>
+    </defs>
+
+    <!-- Grid / Room Frame -->
+    <path d="M 50 310 L 810 310" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="815" y="315" fill="#94a3b8" font-size="12">Floor Ground</text>
+
+    <!-- Base Station Corner Mount -->
+    <rect x="70" y="50" width="16" height="40" fill="#334155" rx="3"/>
+    <circle cx="78" cy="60" r="14" fill="#0284c7"/>
+    <path d="M 78 74 L 78 310" stroke="#64748b" stroke-width="4"/>
+    <path d="M 78 310 L 50 330 M 78 310 L 106 330" stroke="#64748b" stroke-width="3"/>
+    <text x="100" y="65" fill="#0369a1" font-size="12" font-weight="700">Base Camera (2.2m Mount)</text>
+    <text x="100" y="80" fill="#64748b" font-size="11">120 FPS NIR Stream</text>
+
+    <!-- Camera FOV Cone -->
+    <path d="M 85 70 L 680 140 L 720 310 L 150 310 Z" fill="#e0f2fe" opacity="0.35" stroke="#38bdf8" stroke-dasharray="3,3"/>
+    <text x="240" y="160" fill="#0284c7" font-size="12" font-weight="600">850nm Active Optical Field of View</text>
+
+    <!-- Target Mosquito Trajectory -->
+    <path d="M 680 120 Q 640 180 570 150 T 460 170" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,4"/>
+    <!-- Mosquito icon -->
+    <circle cx="680" cy="120" r="4" fill="#dc2626"/>
+    <circle cx="460" cy="170" r="6" fill="#dc2626"/>
+    <text x="690" y="115" fill="#dc2626" font-size="11" font-weight="600">Target Detected (T=0)</text>
+    <text x="440" y="150" fill="#b91c1c" font-size="12" font-weight="700">Predicted Intercept (T + 200ms)</text>
+
+    <!-- Drone Initial Hover -->
+    <rect x="230" y="220" width="45" height="12" rx="4" fill="#16a34a"/>
+    <circle cx="235" cy="226" r="8" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <circle cx="270" cy="226" r="8" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <text x="205" y="250" fill="#15803d" font-size="11" font-weight="600">Drone Hover (1.0m)</text>
+
+    <!-- Interception Path -->
+    <path d="M 275 220 C 320 210 390 190 450 174" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <text x="310" y="195" fill="#1d4ed8" font-size="11" font-weight="700">High-G Intercept Vector (1.5 m/s)</text>
+
+    <!-- Neutralization Impact -->
+    <circle cx="460" cy="170" r="16" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2,2"/>
+    <text x="485" y="185" fill="#b45309" font-size="12" font-weight="700">Kinetic Ingestion Impact</text>
+    <text x="485" y="200" fill="#64748b" font-size="10">28,000 RPM Polycarbonate Blades</text>
+
+    <!-- Step Callouts -->
+    <rect x="50" y="10" width="760" height="30" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="60" y="30" fill="#334155" font-size="11"><strong>Phase 1:</strong> Optical Centroid Extract (1.5ms) &rarr; <strong>Phase 2:</strong> Kalman Trajectory Extrapolation &rarr; <strong>Phase 3:</strong> ESP-NOW Guidance Packet &rarr; <strong>Phase 4:</strong> Ingestion Strike</text>
+  </svg>
+</div>
+
   <h2>Operating Concept</h2>
   <p>Mosquitoes (<em>Aedes</em> / <em>Culex</em>) fly erratically at 1.2 &ndash; 2.5 m/s with accelerations exceeding 1.5 g. An effective interception system requires high thrust-to-weight ratio (&gt;3:1), high-framerate optical tracking (&ge;100 FPS), and zero parasitic aerodynamic drag.</p>
 
