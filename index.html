@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosquito-Hunting Drone 8K Project — Wiki</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  header {
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+  h1 { font-size: 26px; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: #555; font-size: 14px; }
+  nav {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  nav a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 18px;
+    padding: 4px 8px;
+  }
+  nav a:hover { text-decoration: underline; }
+  nav a.current { color: #000; font-weight: 600; text-decoration: none; }
+  h2 { font-size: 20px; margin-top: 30px; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 22px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 22px; }
+  li { margin: 5px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th { background: #f2f2f2; font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 13px; background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+  .warning {
+    background: #fdf3f3;
+    border-left: 4px solid #c00;
+    padding: 12px 16px;
+    margin: 20px 0;
+    color: #800;
+  }
+  .note {
+    background: #f0f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 12px 16px;
+    margin: 20px 0;
+    color: #004488;
+  }
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #666;
+  }
+  .btn {
+    display: inline-block;
+    background: #0066cc;
+    color: #fff !important;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .btn:hover { background: #004999; }
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 14px; }
+    nav a { display: block; margin: 6px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Mosquito-Hunting Drone 8K Project — Wiki</h1>
+    <div class="sub">Mini AI mosquito-hunting drone &mdash; project summary and preliminary &rsquo;8,000 budget</div>
+  </header>
+
+  <nav>
+    <strong>Wiki pages:</strong><br>
+    <a href="index.html" class="current">Home</a>
+    <a href="01-project-goal.html">1. Project Goal</a>
+    <a href="02-development-platform.html">2. Development Platform</a>
+    <a href="03-budget.html">3. Budget</a>
+    <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
+    <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="07-build-sequence.html">7. Build Sequence</a>
+    <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
+    <a href="09-supplier-references.html">9. Supplier References</a>
+  </nav>
+
+  <h2>Project at a glance</h2>
+  <table>
+    <tr><th style="width:30%">Item</th><th>Detail</th></tr>
+    <tr><td><b>Goal</b></td><td>Develop a compact four-motor indoor drone with an onboard camera and programmable electronics to detect and track mosquitoes. Long-term: a flat mosquito-bat-style mesh attachment; eventual autonomous operation without a handheld remote.</td></tr>
+    <tr><td><b>Drone platform</b></td><td>LiteWing ESP32-S3 programmable micro-drone &mdash; indicative price ~&rsquo;3,999</td></tr>
+    <tr><td><b>Camera / AI board</b></td><td>FireBeetle 2 ESP32-S3 camera board &mdash; indicative price ~&rsquo;1,949</td></tr>
+    <tr><td><b>Indicative budget</b></td><td>&rsquo;7,648 total (&rsquo;8,000 concept) &mdash; planning figures, not a verified quotation</td></tr>
+    <tr><td><b>Powered mesh on drone?</b></td><td><b>No.</b> Only a non-powered mesh mock-up is budgeted. An energized grid must never be mounted on the flying drone.</td></tr>
+    <tr><td><b>Project status</b></td><td>Preliminary experimental concept. First milestone: safe programmable flying platform plus a working camera feed.</td></tr>
+  </table>
+
+  <div class="warning">
+    <strong>⚠ Critical safety warning (read first):</strong> Do not mount an energized mosquito-racket grid or exposed high-voltage contacts on the flying drone. High voltage near propellers, wiring, and a lithium battery creates serious shock, short-circuit, and fire risks. The budget includes only a lightweight, non-powered mesh-shaped mock-up. Any powered mesh mechanism requires a separate guarded stationary prototype, independent electrical safety testing, and a new engineering review before integration is considered.
+  </div>
+
+  <div class="note">
+    <strong>Source file:</strong> <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code> (in the project root).<br>
+    <strong>Offline use:</strong> All pages are self-contained HTML with inline CSS. Open any <code>.html</code> file directly in your browser &mdash; no internet connection required.<br>
+    <strong>GitHub Pages:</strong> Enable Pages in repository settings (source: root or <code>/docs</code>) and the site will publish at <code>https://&lt;user&gt;.github.io/musquiteer/</code>.
+  </div>
+
+  <div class="footer">
+    Generated from <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All content is presented as-is from the document.
+  </div>
+</div>
+</body>
+</html>

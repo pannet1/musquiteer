@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7. Build Sequence — Mosquito-Hunting Drone 8K Wiki</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
+  header {
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+  }
+  h1 { font-size: 26px; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: #555; font-size: 14px; }
+  nav {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+  nav a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 18px;
+    padding: 4px 8px;
+  }
+  nav a:hover { text-decoration: underline; }
+  nav a.current { color: #000; font-weight: 600; text-decoration: none; }
+  h2 { font-size: 20px; margin-top: 30px; border-bottom: 1px solid #e5e5e5; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 22px; color: #333; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 10px 22px; }
+  li { margin: 5px 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  th { background: #f2f2f2; font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 13px; background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+  .warning {
+    background: #fdf3f3;
+    border-left: 4px solid #c00;
+    padding: 12px 16px;
+    margin: 20px 0;
+    color: #800;
+  }
+  .note {
+    background: #f0f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 12px 16px;
+    margin: 20px 0;
+    color: #004488;
+  }
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #666;
+  }
+  .btn {
+    display: inline-block;
+    background: #0066cc;
+    color: #fff !important;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .btn:hover { background: #004999; }
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 14px; }
+    nav a { display: block; margin: 6px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>7. Recommended Build Sequence</h1>
+    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+  </header>
+
+  <nav>
+    <strong>Wiki pages:</strong><br>
+    <a href="index.html">Home</a>
+    <a href="01-project-goal.html">1. Project Goal</a>
+    <a href="02-development-platform.html">2. Development Platform</a>
+    <a href="03-budget.html">3. Budget</a>
+    <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
+    <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="07-build-sequence.html" class="current">7. Build Sequence</a>
+    <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
+    <a href="09-supplier-references.html">9. Supplier References</a>
+  </nav>
+
+  <h2>Step 1 — Confirm before ordering</h2>
+  <ol>
+    <li>Ask the <strong>drone seller</strong> to confirm:
+      <ul>
+        <li>Package contents</li>
+        <li>Payload capacity</li>
+        <li>Battery inclusion</li>
+        <li>Supported programming interfaces</li>
+      </ul>
+    </li>
+    <li>Ask the <strong>camera-board seller</strong> to confirm:
+      <ul>
+        <li>Weight</li>
+        <li>Dimensions</li>
+        <li>Power requirements</li>
+        <li>Video-stream access</li>
+      </ul>
+    </li>
+  </ol>
+  <div class="warning">
+    <strong>Do not order the boards</strong> until their physical, electrical, and software compatibility has been checked.
+  </div>
+
+  <h2>Step 2 — Test the drone platform alone</h2>
+  <ul>
+    <li>Test the drone platform by itself in a <strong>clear, controlled area</strong></li>
+    <li>Follow the <strong>manufacturer's instructions</strong></li>
+  </ul>
+
+  <h2>Step 3 — Test the camera and AI board separately</h2>
+  <ul>
+    <li>Test on a <strong>bench</strong></li>
+    <li>Verify <strong>video capture</strong></li>
+    <li>Verify <strong>basic insect-image classification</strong></li>
+  </ul>
+
+  <h2>Step 4 — Integrate the camera</h2>
+  <p>Integrate the camera only after confirming:</p>
+  <ul>
+    <li>Safe power</li>
+    <li>Safe mounting</li>
+    <li>Payload limits</li>
+  </ul>
+  <div class="warning"><strong>Keep motors disabled during electronics tests.</strong></div>
+
+  <h2>Step 5 — Develop autonomy</h2>
+  <p>Develop autonomous flight and tracking <strong>only after</strong>:</p>
+  <ol>
+    <li>Stable manual flight is demonstrated, <strong>and</strong></li>
+    <li>Reliable camera operation is demonstrated</li>
+  </ol>
+
+  <div class="note">
+    <strong>Mesh attachment rule:</strong> Keep the mesh attachment <strong>non-powered during flight testing</strong>.
+  </div>
+
+  <div class="footer">
+    Source: Section 7 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+  </div>
+</div>
+</body>
+</html>
