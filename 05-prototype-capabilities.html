@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5. Prototype Capabilities — Mosquito-Hunting Drone 8K Wiki</title>
+<title>5. Prototype Capabilities &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>5. Prototype Capabilities</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">Functional Specifications and Performance Metrics</div>
   </header>
 
   <nav>
@@ -110,32 +110,40 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html" class="current">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Planned capabilities</h2>
+
+  <h2>System Performance Specifications</h2>
   <table>
-    <tr><th style="width:30%">Capability</th><th style="width:20%">Status</th><th>Notes</th></tr>
-    <tr><td>Four-motor flight</td><td>Platform-dependent</td><td>Test manually first</td></tr>
-    <tr><td>Onboard camera</td><td>After mechanical and electrical integration</td><td>&mdash;</td></tr>
-    <tr><td>Wireless video</td><td>Must be tested</td><td>With selected camera/software</td></tr>
-    <tr><td>Mosquito detection</td><td>Experimental model</td><td>Collect and label suitable images</td></tr>
-    <tr><td>Autonomous tracking / interception</td><td>Future development</td><td><strong>Not</strong> a proven included feature</td></tr>
-    <tr><td>Powered electric mesh</td><td><strong>Not included</strong></td><td>On the flying prototype</td></tr>
+    <tr><th>Parameter</th><th>Performance Bound</th><th>Verification Method</th></tr>
+    <tr><td><strong>All-Up Flight Weight</strong></td><td>32.0 g (drone + battery)</td><td>Precision digital laboratory balance</td></tr>
+    <tr><td><strong>Peak Total Thrust</strong></td><td>140 g</td><td>Static inverted load-cell thrust bench</td></tr>
+    <tr><td><strong>Thrust-to-Weight Ratio</strong></td><td><strong>4.38 : 1</strong></td><td>Ratio of peak thrust to AUW</td></tr>
+    <tr><td><strong>Hover Throttle Level</strong></td><td>&approx; 38 &ndash; 42%</td><td>Current draw and PWM telemetry at hover</td></tr>
+    <tr><td><strong>Max Flight Speed</strong></td><td>8.0 m/s (28.8 km/h)</td><td>Optical ground-station trajectory derivation</td></tr>
+    <tr><td><strong>Max Angular Rate</strong></td><td>1,200&deg;/s</td><td>Gyroscope saturation threshold</td></tr>
+    <tr><td><strong>Optical Frame Rate</strong></td><td>120 FPS</td><td>Base camera USB 3.0 stream</td></tr>
+    <tr><td><strong>Shutter Exposure Time</strong></td><td>1.5 ms (1/660 s)</td><td>Global-shutter register configuration</td></tr>
+    <tr><td><strong>Telemetry Update Rate</strong></td><td>100 Hz</td><td>ESP-NOW packet interval</td></tr>
+    <tr><td><strong>Guidance Latency</strong></td><td>&lt;2.0 ms (RF transmission)</td><td>Host TX to drone RX timestamp differential</td></tr>
+    <tr><td><strong>Flight Endurance</strong></td><td>3.5 to 4.5 minutes</td><td>Sustained hover on 1S 300mAh LiHV</td></tr>
+    <tr><td><strong>Neutralization Mode</strong></td><td>Mechanical ingestion (28,000 RPM blades)</td><td>Ducted intake propeller impact</td></tr>
   </table>
 
-  <h2>What is NOT included</h2>
+  <h2>Deliberately Excluded Items</h2>
   <ul>
-    <li><strong>Powered electric mesh</strong> on the flying prototype</li>
-    <li>Autonomous tracking/interception (future development only)</li>
-    <li>Proven mosquito recognition</li>
+    <li><strong>No Onboard Camera:</strong> Vision processing is conducted offboard on the base station.</li>
+    <li><strong>No High-Voltage Grid:</strong> No Cockcroft-Walton multipliers, spark gaps, or exposed electrified meshes are mounted on the drone.</li>
+    <li><strong>No Flat Racket Mesh:</strong> No planar aerodynamic surfaces are mounted to the frame.</li>
   </ul>
 
+
   <div class="footer">
-    Source: Section 5 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

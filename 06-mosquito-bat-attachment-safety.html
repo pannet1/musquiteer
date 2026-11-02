@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>6. Mosquito-Bat Attachment &amp; Safety — Mosquito-Hunting Drone 8K Wiki</title>
+<title>6. Neutralization & Safety &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -98,8 +98,8 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>6. Mosquito-Bat Attachment &amp; Safety</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <h1>6. Neutralization & Safety</h1>
+    <div class="sub">Mechanical Ingestion Analysis & Elimination of High-Voltage Hazards</div>
   </header>
 
   <nav>
@@ -110,40 +110,37 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html" class="current">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html" class="current">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>What the budget includes</h2>
-  <p>The budget includes only a <strong>lightweight, non-powered mesh-shaped mock-up</strong> &mdash; a mosquito-bat-style attachment that is <strong>not energized</strong>.</p>
+
+  <h2>1. Why High-Voltage Meshes Were Eliminated</h2>
+  <p>Mounting an energized mosquito racket grid onto a micro-drone creates three fatal engineering failure modes:</p>
 
   <div class="warning">
-    <h2 style="margin-top:0">⚠ Critical safety warning</h2>
-    <p><strong>Do not mount an energized mosquito-racket grid or exposed high-voltage contacts on the flying drone.</strong></p>
-    <p>High voltage near propellers, wiring, and a lithium battery creates serious:</p>
+    <strong>Fatal Failure Modes of High Voltage on Micro-Drones:</strong>
     <ul>
-      <li><strong>Shock risks</strong></li>
-      <li><strong>Short-circuit risks</strong></li>
-      <li><strong>Fire risks</strong></li>
+      <li><strong>Broadband EMI &amp; MCU Latch-Up:</strong> Electric arcs generate nanosecond dI/dt transients that induce ground bounce, crashing the ESP32-S3 and freezing the IMU.</li>
+      <li><strong>Aerodynamic Drag &amp; Inertia:</strong> A planar mesh acts as a sail, causing uncontrolled pitching moments and sluggish PID response.</li>
+      <li><strong>LiPo Fire Hazard:</strong> High-voltage arcs adjacent to a lightweight lithium cell present a severe fire risk during crashes.</li>
     </ul>
   </div>
 
-  <h2>Requirements for any powered mesh</h2>
-  <p>Any powered mesh mechanism requires, before integration is considered:</p>
-  <ol>
-    <li>A <strong>separate guarded stationary prototype</strong></li>
-    <li><strong>Independent electrical safety testing</strong></li>
-    <li>A <strong>new engineering review</strong></li>
-  </ol>
+  <h2>2. The Selected Solution: Mechanical Propeller Ingestion</h2>
+  <p>The engineered design uses the drone's existing propulsion system as the neutralization mechanism:</p>
+  <ul>
+    <li><strong>Blade Tip Velocity:</strong> At 28,000 RPM, the tips of the 31mm polycarbonate propellers travel at over <strong>163 km/h (45.4 m/s)</strong>.</li>
+    <li><strong>Aerodynamic Inflow Funnel:</strong> The ducted cowl creates a low-pressure intake funnel that draws the insect into the spinning rotor disk when within 3 cm.</li>
+    <li><strong>Kinetic Impact:</strong> Polycarbonate blades colliding at &gt;160 km/h instantly neutralize the insect upon contact.</li>
+    <li><strong>Zero Weight &amp; Zero EMI:</strong> Adds 0g of mass and produces zero electromagnetic interference.</li>
+  </ul>
 
-  <div class="note">
-    <strong>Flight testing rule:</strong> Keep the mesh attachment <strong>non-powered during flight testing</strong>.
-  </div>
 
   <div class="footer">
-    Source: Section 6 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

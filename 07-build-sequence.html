@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>7. Build Sequence — Mosquito-Hunting Drone 8K Wiki</title>
+<title>7. Build Sequence &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -98,8 +98,8 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>7. Recommended Build Sequence</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <h1>7. Build Sequence</h1>
+    <div class="sub">Complete 9-Step Linear Implementation Instructions</div>
   </header>
 
   <nav>
@@ -110,70 +110,86 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html" class="current">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Step 1 — Confirm before ordering</h2>
+
+  <h2>Step-by-Step Linear Implementation</h2>
+  <p>Follow these 9 sequential steps in exact order. There are no branches or alternative paths.</p>
+
+  <h3>Step 1: Procure the Exact Bill of Materials</h3>
+  <p>Acquire the exact items specified in <a href="03-budget.html">3. Budget</a>: 65mm Whoop frame, 4x 0802 19,000KV brushless motors, 31mm 4-blade props, AIO ESP32-S3 flight controller, 2x 1S LiHV batteries (BT2.0/A30), 100&mu;F cap, OV9281 USB camera, 850nm filter/LEDs, and base-station ESP32-S3 module.</p>
+
+  <h3>Step 2: Mechanical Assembly &amp; Airframe Rigging</h3>
   <ol>
-    <li>Ask the <strong>drone seller</strong> to confirm:
-      <ul>
-        <li>Package contents</li>
-        <li>Payload capacity</li>
-        <li>Battery inclusion</li>
-        <li>Supported programming interfaces</li>
-      </ul>
-    </li>
-    <li>Ask the <strong>camera-board seller</strong> to confirm:
-      <ul>
-        <li>Weight</li>
-        <li>Dimensions</li>
-        <li>Power requirements</li>
-        <li>Video-stream access</li>
-      </ul>
-    </li>
-  </ol>
-  <div class="warning">
-    <strong>Do not order the boards</strong> until their physical, electrical, and software compatibility has been checked.
-  </div>
-
-  <h2>Step 2 — Test the drone platform alone</h2>
-  <ul>
-    <li>Test the drone platform by itself in a <strong>clear, controlled area</strong></li>
-    <li>Follow the <strong>manufacturer's instructions</strong></li>
-  </ul>
-
-  <h2>Step 3 — Test the camera and AI board separately</h2>
-  <ul>
-    <li>Test on a <strong>bench</strong></li>
-    <li>Verify <strong>video capture</strong></li>
-    <li>Verify <strong>basic insect-image classification</strong></li>
-  </ul>
-
-  <h2>Step 4 — Integrate the camera</h2>
-  <p>Integrate the camera only after confirming:</p>
-  <ul>
-    <li>Safe power</li>
-    <li>Safe mounting</li>
-    <li>Payload limits</li>
-  </ul>
-  <div class="warning"><strong>Keep motors disabled during electronics tests.</strong></div>
-
-  <h2>Step 5 — Develop autonomy</h2>
-  <p>Develop autonomous flight and tracking <strong>only after</strong>:</p>
-  <ol>
-    <li>Stable manual flight is demonstrated, <strong>and</strong></li>
-    <li>Reliable camera operation is demonstrated</li>
+    <li>Invert frame. Install four 0802 motors using M1.4 &times; 3mm screws with Loctite 222.</li>
+    <li>Route motor wires along underside duct struts; secure with Kapton tape.</li>
+    <li>Press 31mm propellers onto shafts (Front-Left CW, Front-Right CCW, Rear-Left CCW, Rear-Right CW).</li>
+    <li>Verify &ge;0.8mm radial clearance between blade tips and duct inner walls.</li>
   </ol>
 
-  <div class="note">
-    <strong>Mesh attachment rule:</strong> Keep the mesh attachment <strong>non-powered during flight testing</strong>.
-  </div>
+  <h3>Step 3: Power Distribution &amp; Flight Electronics Wiring</h3>
+  <ol>
+    <li>Solder BT2.0/A30 pigtail (red to VBAT, black to GND) on the AIO board.</li>
+    <li>Solder 100&mu;F 10V low-ESR capacitor across VBAT and GND pads.</li>
+    <li>Solder motor phase wires directly to ESC pads on the corners of the board.</li>
+    <li>Mount AIO board on rubber dampeners with board arrow pointing forward.</li>
+    <li>Verify resistance across battery leads &gt;1k&Omega; with a digital multimeter.</li>
+  </ol>
+
+  <h3>Step 4: Flash Firmware &amp; Calibrate Attitude Loop</h3>
+  <ol>
+    <li>Flash ESP32-S3 with ESP-IDF firmware. Configure SPI bus to ICM-42688 at 24 MHz (1 kHz sample rate).</li>
+    <li>Set flight PID update rate to 500 Hz; configure motor output protocol to DShot300.</li>
+    <li>Run level calibration to store zero-rate gyro offsets and accelerometer gravity vector in flash.</li>
+    <li>Verify correct motor rotation directions via bench test pulses (props removed).</li>
+  </ol>
+
+  <h3>Step 5: Assemble Stationary NIR Optical Base Station</h3>
+  <ol>
+    <li>Fit 120&deg; lens and 850nm bandpass filter to OV9281 camera. Mount 850nm IR LED ring around lens.</li>
+    <li>Mount assembly on tripod in room corner at 30&deg; downward tilt.</li>
+    <li>Connect camera to USB 3.0 port and connect base ESP32-S3 dongle to another USB port.</li>
+  </ol>
+
+  <h3>Step 6: Deploy Base-Station Target Tracking Software</h3>
+  <ol>
+    <li>Stream monochrome frames at 1280 &times; 800 at 100 FPS (exposure locked to 1.5 ms).</li>
+    <li>Compute temporal difference: D(t) = |I(t) - I(t-1)| to eliminate static background.</li>
+    <li>Apply binary threshold T=30 and 3x3 morphological open operation to clean shot noise.</li>
+    <li>Extract centroid (u, v) for clusters measuring 2 to 15 pixels.</li>
+    <li>Update 4-state Kalman filter to estimate smoothed target position and heading vector.</li>
+  </ol>
+
+  <h3>Step 7: Configure Low-Latency Telemetry Link</h3>
+  <ol>
+    <li>Pair host ESP32-S3 and drone AIO on ESP-NOW channel 6 (unencrypted mode).</li>
+    <li>Transmit 12-byte CommandPacket (x, y, z, yaw, state flags, checksum) at 100 Hz.</li>
+    <li>On drone Core 0, receive packet and write target vector into atomic buffer for Core 1 flight loop.</li>
+  </ol>
+
+  <h3>Step 8: Calibration &amp; Tethered Interception Test</h3>
+  <ol>
+    <li>Calibrate perspective matrix using four floor markers (1m &times; 1m square).</li>
+    <li>Suspend drone via 1.5m ceiling tether through frame center-of-gravity.</li>
+    <li>Inject synthetic moving IR target; confirm drone yaw-aligns within 100 ms and tracks smoothly.</li>
+  </ol>
+
+  <h3>Step 9: Live Flight Engagement &amp; Mechanical Ingestion</h3>
+  <ol>
+    <li>Ascend to 1.0m hover via base-station optical feedback.</li>
+    <li>On mosquito detection (500 Hz wingbeat cadence + 2-10 pixel size), transition to Intercept mode.</li>
+    <li>Drone accelerates along interception vector at 1.5 m/s.</li>
+    <li>Ducted fan suction pulls mosquito into 28,000 RPM polycarbonate blades for instant mechanical neutralization.</li>
+    <li>Drone disengages and returns to 1.0m hover center.</li>
+  </ol>
+
 
   <div class="footer">
-    Source: Section 7 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

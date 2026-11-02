@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1. Project Goal — Mosquito-Hunting Drone 8K Wiki</title>
+<title>1. Project Goal &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>1. Project Goal</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">Autonomous mosquito interceptor system — Objectives & Core Architecture</div>
   </header>
 
   <nav>
@@ -110,32 +110,42 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Objective</h2>
-  <p>Develop a compact <strong>four-motor indoor drone</strong> with:</p>
-  <ul>
-    <li>an <strong>onboard camera</strong></li>
-    <li><strong>programmable electronics</strong></li>
-  </ul>
-  <p>&hellip;to <strong>detect and track mosquitoes</strong>.</p>
 
-  <h2>Long-term concept</h2>
+  <h2>Objective</h2>
+  <p>Develop a high-agility, autonomous micro-drone system named <strong>Musquiteer</strong> to detect, pursue, and neutralize mosquitoes indoors.</p>
+
+  <h2>Operating Concept</h2>
+  <p>Mosquitoes (<em>Aedes</em> / <em>Culex</em>) fly erratically at 1.2 &ndash; 2.5 m/s with accelerations exceeding 1.5 g. An effective interception system requires high thrust-to-weight ratio (&gt;3:1), high-framerate optical tracking (&ge;100 FPS), and zero parasitic aerodynamic drag.</p>
+
+  <p>The system is partitioned into two specialized nodes:</p>
   <ul>
-    <li>A <strong>flat mosquito-bat-style mesh attachment</strong></li>
-    <li>Eventual <strong>autonomous operation</strong> &mdash; without a handheld remote</li>
+    <li><strong>Stationary Optical Base Station:</strong> High-framerate (120 FPS) Near-Infrared (NIR) camera with 850nm bandpass filter and active 850nm illumination. Tracks insect centroids via temporal differencing and predicts flight trajectories using a 4-state Kalman filter. Sends real-time guidance setpoints to the drone at 100 Hz over ESP-NOW (&lt;2ms latency).</li>
+    <li><strong>Agile Micro-Interceptor Drone:</strong> 65mm ducted brushless Whoop (32g All-Up Weight). High thrust-to-weight ratio (4.3:1) powered by 0802 19,000KV brushless motors. Hard real-time 500 Hz attitude control on an integrated ESP32-S3 All-In-One (AIO) flight controller.</li>
+    <li><strong>Kinetic Ingestion Neutralization:</strong> Ducted propellers spinning at 28,000 RPM create an intake suction funnel that mechanically neutralizes mosquitoes upon contact&mdash;eliminating high-voltage hazards and EMI completely.</li>
   </ul>
+
+  <h2>Why the Initial Wiki Concept Was Challenged</h2>
+  <table>
+    <tr><th>Old Initial Concept</th><th>Failure Mode Identified</th><th>Corrected Single-Path Design</th></tr>
+    <tr><td>LiteWing Coreless Brushed Motors</td><td>Motor burnout, voltage sag, unable to lift camera</td><td>0802 Brushless Motors (4.3:1 thrust-to-weight ratio)</td></tr>
+    <tr><td>Onboard FireBeetle 2 Camera</td><td>Motion blur at 1/30s exposure, 3-5 FPS inference latency</td><td>Offboard Stationary 120 FPS Global-Shutter NIR Camera</td></tr>
+    <tr><td>Flat Mosquito-Bat Mesh</td><td>High aerodynamic drag, severe pitching moments, inertia</td><td>Ingestion inside Ducted Propeller Cowl (0g added weight)</td></tr>
+    <tr><td>Energized High Voltage Grid</td><td>Arc EMI resets flight controller, fire hazard near LiPo</td><td>Pure Mechanical Blade Neutralization (Zero HV, Zero EMI)</td></tr>
+  </table>
 
   <div class="note">
-    <strong>Important status note:</strong> The LiteWing ESP32-S3 is a <strong>development platform, not a finished autonomous mosquito-hunting product</strong>. The system described here is a preliminary concept. Mosquito recognition, onboard AI autonomy, payload capacity, and any elimination mechanism remain to be engineered and tested.
+    <strong>Next:</strong> Review the hardware specifications in <a href="02-development-platform.html">2. Development Platform</a>.
   </div>
 
+
   <div class="footer">
-    Source: Section 1 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>9. Supplier References — Mosquito-Hunting Drone 8K Wiki</title>
+<title>9. Supplier References &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>9. Supplier References</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">Component Sourcing Guide & Indian Supplier References</div>
   </header>
 
   <nav>
@@ -110,34 +110,36 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html" class="current">9. Supplier References</a>
   </nav>
 
-  <h2>Components and suppliers</h2>
+
+  <h2>Component Sourcing Directory</h2>
+  <p>All components specified in the single-path Bill of Materials can be ordered from standard domestic robotics and FPV retailers in India:</p>
+
   <table>
-    <tr><th style="width:30%">Component</th><th style="width:20%">Supplier</th><th>Search instruction</th></tr>
-    <tr><td>LiteWing ESP32-S3</td><td>Robotechminds</td><td>Search the exact product name on the supplier website</td></tr>
-    <tr><td>FireBeetle 2 ESP32-S3 camera board</td><td>IBOTS</td><td>Search the exact product name on the supplier website</td></tr>
+    <tr><th>Component Category</th><th>Recommended Supplier</th><th>Search Keywords</th><th>Notes</th></tr>
+    <tr><td><strong>AIO Flight Controller</strong></td><td>Robu.in / QuadKopter.in</td><td><code>ESP32-S3 Whoop AIO FC ESC</code></td><td>Confirm ESP32-S3 MCU + 5A ESC rating</td></tr>
+    <tr><td><strong>Brushless Motors</strong></td><td>Robu.in / QuadKopter.in</td><td><code>0802 19000KV Brushless Motor 1.0mm shaft</code></td><td>Verify 1.0mm shaft size</td></tr>
+    <tr><td><strong>Whoop Frame &amp; Props</strong></td><td>Robu.in / ElectronicsComp</td><td><code>65mm Brushless Whoop Frame</code>, <code>31mm 4-Blade Propeller 1.0mm</code></td><td>Select polycarbonate material</td></tr>
+    <tr><td><strong>LiHV Batteries &amp; Pigtails</strong></td><td>QuadKopter.in / Robu.in</td><td><code>1S 300mAh LiHV BT2.0</code></td><td>Purchase BT2.0 solid-pin pigtails</td></tr>
+    <tr><td><strong>Global Shutter Camera</strong></td><td>Robu.in / Robotechminds / Amazon India</td><td><code>OV9281 USB Camera Module 120FPS Monochrome</code></td><td>Confirm M12 wide-angle lens</td></tr>
+    <tr><td><strong>850nm Filter &amp; LEDs</strong></td><td>Robotechminds / ElectronicsComp / Amazon India</td><td><code>850nm Narrowband Optical Filter Film</code>, <code>850nm High Power IR LED Ring</code></td><td>Match 850nm wavelength</td></tr>
+    <tr><td><strong>Base ESP32-S3 Dongle</strong></td><td>ElectronicsComp / Robu.in</td><td><code>ESP32-S3-DevKitC-1</code></td><td>Plugs into base laptop</td></tr>
   </table>
 
-  <div class="warning">
-    <strong>Important note:</strong> Exact product-page URLs were not retained in the project notes.
-  </div>
-
-  <h2>Verify before payment</h2>
-  <p>Verify the following with each seller before payment:</p>
+  <h2>Sourcing Guidelines</h2>
   <ul>
-    <li>Exact listing</li>
-    <li>Specifications</li>
-    <li>Stock</li>
-    <li>Final price</li>
+    <li><strong>Batch Delivery:</strong> Order airframe, motors, propellers, and AIO flight controller together to consolidate shipping.</li>
+    <li><strong>Connector Uniformity:</strong> Ensure batteries and charger share the identical solid-pin connector standard (BT2.0 or A30).</li>
   </ul>
 
+
   <div class="footer">
-    Source: Section 8 (Supplier references) of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

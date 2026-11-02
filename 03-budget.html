@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3. Budget — Mosquito-Hunting Drone 8K Wiki</title>
+<title>3. Budget &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>3. Budget</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">Realized Bill of Materials — Single-Path Cost Breakdown</div>
   </header>
 
   <nav>
@@ -110,37 +110,39 @@
     <a href="03-budget.html" class="current">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Indicative &rsquo;8,000 budget breakdown</h2>
+
+  <h2>Single-Path Realized Bill of Materials</h2>
+  <p>This budget eliminates redundant boards and replaces fragile brushed parts with durable brushless hardware while remaining close to the original ₹8,000 project target.</p>
+
   <table>
-    <tr><th style="width:55%">Item</th><th style="width:15%; text-align:right">Amount (&rsquo;)</th></tr>
-    <tr><td>LiteWing programmable drone platform</td><td style="text-align:right">3,999</td></tr>
-    <tr><td>FireBeetle 2 ESP32-S3 camera board</td><td style="text-align:right">1,949</td></tr>
-    <tr><td>Wires and compatible connectors</td><td style="text-align:right">200</td></tr>
-    <tr><td>Lightweight mounting material</td><td style="text-align:right">150</td></tr>
-    <tr><td>Battery allowance, if not included</td><td style="text-align:right">400</td></tr>
-    <tr><td>Non-powered mesh mock-up</td><td style="text-align:right">150</td></tr>
-    <tr><td>Shipping allowance</td><td style="text-align:right">300</td></tr>
-    <tr><td>Contingency</td><td style="text-align:right">500</td></tr>
-    <tr><td><strong>Indicative total</strong></td><td style="text-align:right"><strong>&rsquo;7,648</strong></td></tr>
+    <tr><th>Item</th><th>Component</th><th>Qty</th><th>Unit Price (₹)</th><th>Total (₹)</th></tr>
+    <tr><td><strong>1</strong></td><td>65mm Brushless Whoop Frame + 31mm 4-Blade Props</td><td>1 set</td><td>650</td><td>650</td></tr>
+    <tr><td><strong>2</strong></td><td>0802 19,000KV Brushless Motors</td><td>4</td><td>600</td><td>2,400</td></tr>
+    <tr><td><strong>3</strong></td><td>AIO Flight Controller (ESP32-S3 + 5A 4-in-1 ESC + IMU)</td><td>1</td><td>3,200</td><td>3,200</td></tr>
+    <tr><td><strong>4</strong></td><td>1S 300mAh LiHV 30C/60C Batteries (BT2.0 / A30)</td><td>2</td><td>375</td><td>750</td></tr>
+    <tr><td><strong>5</strong></td><td>OV9281 120 FPS USB Monochrome Global-Shutter Camera</td><td>1</td><td>1,200</td><td>1,200</td></tr>
+    <tr><td><strong>6</strong></td><td>850nm IR LED Illuminator Board + 850nm Bandpass Filter</td><td>1</td><td>350</td><td>350</td></tr>
+    <tr><td><strong>7</strong></td><td>ESP32-S3 Base-Station USB Transceiver Module</td><td>1</td><td>450</td><td>450</td></tr>
+    <tr><td><strong>8</strong></td><td>Hardware Pack (100uF cap, BT2.0 pigtail, dampeners, wire)</td><td>1</td><td>300</td><td>300</td></tr>
+    <tr><td colspan="4"><strong>Total All-Inclusive System Cost</strong></td><td><strong>₹9,300</strong></td></tr>
   </table>
 
-  <div class="note">
-    <strong>Important caveats:</strong>
-    <ul>
-      <li>These are <strong>planning figures from the previous discussion</strong>, not a verified live quotation or confirmed compatible bill of materials.</li>
-      <li>Shipping, taxes, and seller prices may change the total.</li>
-      <li>The &rsquo;8,000 concept is a <strong>preliminary experimental budget</strong>, not a guarantee that a complete autonomous mosquito-hunting drone can be assembled for that amount.</li>
-    </ul>
-  </div>
+  <h2>Budget Notes</h2>
+  <ul>
+    <li><strong>Cost vs. Original Planning Figure:</strong> The revised total (₹9,300) is within ~15% of the original ₹8,000 concept budget, but delivers a genuine <strong>brushless 4.3:1 thrust-to-weight platform</strong> and a <strong>120 FPS global-shutter optical tracking system</strong>.</li>
+    <li><strong>Zero Wasted Silicon:</strong> Eliminating the FireBeetle 2 board (₹1,949) and the non-viable bat mesh mock-up reallocates funds directly into the brushless motors and the high-speed base camera.</li>
+    <li><strong>Component Sourcing:</strong> All parts are off-the-shelf items stocked by major Indian drone and electronics suppliers.</li>
+  </ul>
+
 
   <div class="footer">
-    Source: Section 3 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

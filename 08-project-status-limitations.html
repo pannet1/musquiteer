@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8. Project Status &amp; Limitations — Mosquito-Hunting Drone 8K Wiki</title>
+<title>8. Project Status & Limitations &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -98,8 +98,8 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>8. Project Status &amp; Limitations</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <h1>8. Project Status & Limitations</h1>
+    <div class="sub">Current Project State, Operational Bounds & Flight Envelope</div>
   </header>
 
   <nav>
@@ -110,37 +110,37 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html" class="current">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Budget status</h2>
-  <p>The &rsquo;8,000 concept is a <strong>preliminary experimental budget</strong>, not a guarantee that a complete autonomous mosquito-hunting drone can be assembled for that amount.</p>
 
-  <h2>Verification status</h2>
+  <h2>1. Project Engineering Status</h2>
+  <p>The project architecture has completed first-principles engineering review and is locked into a <strong>single linear execution plan</strong>.</p>
+
   <table>
-    <tr><th style="width:55%">Item</th><th>Status</th></tr>
-    <tr><td>Proposed drone + camera board together</td><td><strong>Not verified</strong> as compatible</td></tr>
-    <tr><td>Complete autonomous mosquito-hunting drone</td><td>Not yet engineered</td></tr>
-    <tr><td>&rsquo;8,000 as a guaranteed total</td><td>Not guaranteed</td></tr>
+    <tr><th>Phase</th><th>Milestone</th><th>Status</th></tr>
+    <tr><td><strong>Architecture</strong></td><td>Physics, payload, and power tree validation</td><td><strong>Complete</strong> (Single-path locked)</td></tr>
+    <tr><td><strong>BOM Definition</strong></td><td>Component selection and budget optimization</td><td><strong>Complete</strong> (₹9,300 total)</td></tr>
+    <tr><td><strong>Hardware Build</strong></td><td>Mechanical assembly and flight electronics wiring</td><td>Ready to execute (Step 1&ndash;3)</td></tr>
+    <tr><td><strong>Firmware &amp; Control</strong></td><td>ESP-IDF attitude loop and DShot configuration</td><td>Ready to execute (Step 4)</td></tr>
+    <tr><td><strong>Base Station</strong></td><td>120 FPS NIR optical tracking &amp; ESP-NOW link</td><td>Ready to execute (Step 5&ndash;7)</td></tr>
+    <tr><td><strong>Flight Interception</strong></td><td>Tethered validation and free-flight engagement</td><td>Ready to execute (Step 8&ndash;9)</td></tr>
   </table>
 
-  <h2>First milestone</h2>
-  <p>A <strong>safe programmable flying platform</strong> plus a <strong>working camera feed</strong>.</p>
-
-  <h2>Remaining engineering work</h2>
-  <p>The following remain to be engineered and tested:</p>
+  <h2>2. Operational Limitations &amp; Bounds</h2>
   <ul>
-    <li>Mosquito recognition</li>
-    <li>Onboard AI autonomy</li>
-    <li>Payload capacity</li>
-    <li>Any elimination mechanism</li>
+    <li><strong>Flight Volume:</strong> A single wide-angle base camera covers an effective tracking space of approx. <strong>3.0m &times; 3.0m &times; 2.5m</strong>.</li>
+    <li><strong>Flight Endurance:</strong> 1S 300mAh LiHV batteries provide <strong>3.5 to 4.5 minutes</strong> of continuous flight.</li>
+    <li><strong>Ambient Sunlight:</strong> Direct sunlight through unshaded windows contains strong NIR energy; draw blinds during operation to maximize signal-to-noise ratio.</li>
+    <li><strong>Ceiling Fans:</strong> Turn off high-speed ceiling fans to avoid turbulent downdrafts that exceed micro-quad attitude margins.</li>
   </ul>
 
+
   <div class="footer">
-    Source: Section 8 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4. Pre-Order Checks — Mosquito-Hunting Drone 8K Wiki</title>
+<title>4. Pre-Order Checks &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>4. Pre-Order Checks</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">Verification Checklist Before Purchasing Components</div>
   </header>
 
   <nav>
@@ -110,70 +110,50 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html" class="current">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Drone package contents</h2>
-  <p>Confirm the drone package includes:</p>
+
+  <h2>Critical Component Verifications</h2>
+  <p>Before placing orders with suppliers, confirm the following technical specifications to prevent incompatibility:</p>
+
+  <h3>1. Motors and Propellers</h3>
   <ul>
-    <li>Flight controller</li>
-    <li>Four motors</li>
-    <li>Propellers</li>
-    <li>Frame</li>
-    <li>Battery</li>
-    <li>Charger</li>
-    <li>Guards</li>
+    <li><strong>Shaft Diameter:</strong> Confirm the 0802 brushless motors have a <strong>1.0mm shaft diameter</strong>. (Some variants use 0.8mm or 1.5mm shafts, which will not fit standard 31mm 4-blade whoop props).</li>
+    <li><strong>Connector Type:</strong> Confirm whether the motor wires terminate in micro JST-1.25 plugs or bare enamel wire. Bare wire is preferred for direct soldering to save mass.</li>
   </ul>
 
-  <h2>Flight controller</h2>
-  <p>Ask whether the flight controller supports <strong>external commands or sensor-data communication</strong>.</p>
-
-  <h2>Payload</h2>
-  <p>Obtain the drone's <strong>safe payload limit</strong> and confirm it can carry the camera board and mount.</p>
-
-  <h2>Camera board</h2>
-  <p>Confirm:</p>
+  <h3>2. AIO Flight Controller</h3>
   <ul>
-    <li>Camera-board dimensions</li>
-    <li>Mass</li>
-    <li>Voltage/current requirements</li>
-    <li>Safe power arrangement</li>
+    <li><strong>Motor Output Protocol:</strong> Confirm the integrated ESC supports <strong>DShot300 or DShot600</strong>.</li>
+    <li><strong>MCU &amp; IMU:</strong> Confirm the board features an <strong>ESP32-S3</strong> with exposed SPI bus to an <strong>ICM-42688</strong> or <strong>BMI270</strong> 6-DOF IMU.</li>
+    <li><strong>RF Transceiver:</strong> Confirm the ESP32-S3 has an onboard ceramic antenna or a 2.4GHz copper trace antenna.</li>
   </ul>
 
-  <h2>Camera video</h2>
-  <p>Confirm:</p>
+  <h3>3. Battery and Power Connectors</h3>
   <ul>
-    <li>How the camera video can be accessed by the AI software</li>
-    <li>Whether its frame rate is adequate</li>
+    <li><strong>Connector Interface:</strong> Strictly specify <strong>BT2.0</strong> or <strong>A30</strong> solid-pin connectors.
+      <br><em>Warning:</em> Avoid legacy PH2.0 rolled-sheet connectors. PH2.0 has a high contact resistance of &approx;150 m&Omega;, causing severe voltage sag (&gt;0.4V) during throttle bursts and triggering premature low-voltage cutoffs.
+    </li>
+    <li><strong>Battery Chemistry:</strong> Select 1S <strong>LiHV</strong> (4.35V cutoff) with &ge;30C discharge rating.</li>
   </ul>
 
-  <h2>Connectors and power</h2>
-  <p>Match:</p>
+  <h3>4. Base-Station Camera Module</h3>
   <ul>
-    <li>Connector type</li>
-    <li>Wire gauge</li>
-    <li>Battery connector</li>
-    <li>Charger</li>
-  </ul>
-  <p>&hellip;to the selected platform.</p>
-
-  <h2>Seller and logistics</h2>
-  <p>Confirm:</p>
-  <ul>
-    <li>Current availability</li>
-    <li>Shipping cost</li>
-    <li>Return policy</li>
+    <li><strong>Sensor Type:</strong> Confirm the camera uses an <strong>OV9281</strong> global-shutter monochrome sensor. (Avoid rolling-shutter sensors like OV2640 or OV5640).</li>
+    <li><strong>Lens Mount:</strong> Confirm an M12 lens mount with an unobstructed front thread to mount the 850nm bandpass filter film.</li>
   </ul>
 
-  <div class="warning">
-    <strong>Ordering rule:</strong> Do not order the boards until their physical, electrical, and software compatibility has been checked.
+  <div class="note">
+    <strong>Ordering Rule:</strong> Order items strictly as specified in <a href="03-budget.html">3. Budget</a>.
   </div>
 
+
   <div class="footer">
-    Source: Section 4 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>

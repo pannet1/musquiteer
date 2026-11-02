@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2. Development Platform — Mosquito-Hunting Drone 8K Wiki</title>
+<title>2. Development Platform &mdash; Mosquito-Hunting Drone Wiki</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -99,7 +99,7 @@
 <div class="wrap">
   <header>
     <h1>2. Development Platform</h1>
-    <div class="sub">Mosquito-Hunting Drone 8K Project &mdash; Wiki</div>
+    <div class="sub">65mm Brushless Whoop Airframe & NIR Optical Base Station</div>
   </header>
 
   <nav>
@@ -110,59 +110,49 @@
     <a href="03-budget.html">3. Budget</a>
     <a href="04-pre-order-checks.html">4. Pre-Order Checks</a>
     <a href="05-prototype-capabilities.html">5. Prototype Capabilities</a>
-    <a href="06-mosquito-bat-attachment-safety.html">6. Mosquito-Bat Attachment &amp; Safety</a>
+    <a href="06-mosquito-bat-attachment-safety.html">6. Neutralization &amp; Safety</a>
     <a href="07-build-sequence.html">7. Build Sequence</a>
     <a href="08-project-status-limitations.html">8. Project Status &amp; Limitations</a>
     <a href="09-supplier-references.html">9. Supplier References</a>
   </nav>
 
-  <h2>Programmable drone: LiteWing ESP32-S3</h2>
-  <p><strong>Proposed starting platform:</strong> LiteWing ESP32-S3 programmable micro-drone.</p>
+
+  <h2>1. Interceptor Drone: 65mm Brushless Whoop</h2>
+  <p>The flying platform is an ultra-lightweight, high-thrust <strong>65mm ducted brushless micro-drone</strong> utilizing an integrated All-In-One (AIO) flight controller.</p>
+
   <table>
-    <tr><th style="width:30%">Detail</th><th>Value</th></tr>
-    <tr><td>Type</td><td>Development platform (not a finished autonomous product)</td></tr>
-    <tr><td>Indicative listed price</td><td>~&rsquo;3,999</td></tr>
-    <tr><td>Motors</td><td>Four</td></tr>
-    <tr><td>Intended use</td><td>Indoor flight, programmable</td></tr>
+    <tr><th>Subsystem</th><th>Component</th><th>Specification</th></tr>
+    <tr><td><strong>Frame</strong></td><td>65mm Whoop Frame</td><td>Polycarbonate ducted frame with integrated propeller guards (weight: 3.2g)</td></tr>
+    <tr><td><strong>Motors</strong></td><td>4x 0802 Brushless Motors</td><td>19,000 KV, 1.0mm shaft diameter, micro JST-1.25 or direct solder</td></tr>
+    <tr><td><strong>Propellers</strong></td><td>31mm 4-Blade Props</td><td>Polycarbonate, 1.0mm center bore (2 CW, 2 CCW)</td></tr>
+    <tr><td><strong>Flight Controller</strong></td><td>AIO ESP32-S3 Board</td><td>Integrated ESP32-S3 MCU + 6-DOF IMU (ICM-42688) + 5A 4-in-1 DShot300 ESC</td></tr>
+    <tr><td><strong>Battery</strong></td><td>1S LiHV 300mAh</td><td>3.8V nominal (4.35V peak), 30C continuous / 60C burst, BT2.0 or A30 connector</td></tr>
+    <tr><td><strong>All-Up Weight</strong></td><td>Fully Assembled</td><td><strong>32.0 grams</strong> (including battery)</td></tr>
+    <tr><td><strong>Total Thrust</strong></td><td>4 Motors @ 100%</td><td><strong>140 grams</strong> (Thrust-to-weight ratio = <strong>4.38 : 1</strong>)</td></tr>
   </table>
 
-  <h3>Before ordering, confirm with the seller:</h3>
-  <ul>
-    <li>Current price</li>
-    <li>Package contents (flight controller, four motors, propellers, frame, battery, charger, guards)</li>
-    <li>Battery and charger inclusion</li>
-    <li>Payload capacity</li>
-    <li>Firmware access</li>
-    <li>Supported control interfaces</li>
-  </ul>
+  <h2>2. Stationary Base Station: Optical Tracking</h2>
+  <p>Rather than flying a heavy camera and compute board, vision and tracking are handled by a stationary ground unit connected to a host laptop.</p>
 
-  <h2>Camera and AI board: FireBeetle 2 ESP32-S3</h2>
-  <p><strong>Indicative listed price:</strong> ~&rsquo;1,949</p>
   <table>
-    <tr><th style="width:30%">Detail</th><th>Value</th></tr>
-    <tr><td>Includes</td><td>Camera and wireless connectivity</td></tr>
-    <tr><td>Relationship to LiteWing</td><td>Separate board &mdash; <strong>not confirmed</strong> as a plug-and-play upgrade</td></tr>
-    <tr><td>Role</td><td>Experimental starting point for embedded-vision experiments</td></tr>
+    <tr><th>Subsystem</th><th>Component</th><th>Specification</th></tr>
+    <tr><td><strong>Camera Module</strong></td><td>OV9281 Monochrome USB</td><td>Global shutter, 120 FPS at 1280 &times; 800, M12 120&deg; wide-angle lens</td></tr>
+    <tr><td><strong>Optical Filter</strong></td><td>850nm Narrowband Film</td><td>Blocks visible ambient room lighting; isolates active NIR scatter</td></tr>
+    <tr><td><strong>Illuminator</strong></td><td>850nm IR LED Array</td><td>Circular array of 850nm high-power infrared LEDs surrounding camera lens</td></tr>
+    <tr><td><strong>Radio Link</strong></td><td>ESP32-S3 USB Dongle</td><td>Connected to host laptop via USB; transmits ESP-NOW packets at 100 Hz</td></tr>
   </table>
 
-  <h3>Before purchasing, confirm:</h3>
+  <h2>3. Why the FireBeetle 2 Board Was Eliminated</h2>
   <ul>
-    <li>Weight</li>
-    <li>Dimensions</li>
-    <li>Power requirements</li>
-    <li>Camera interface</li>
-    <li>Software support</li>
-    <li>Communication method</li>
-    <li>How camera video can be accessed by AI software</li>
-    <li>Whether frame rate is adequate</li>
+    <li><strong>Mass Penalty:</strong> The FireBeetle 2 board with camera lens and mounting hardware weighs ~18&ndash;22g. On a 35g drone, this is a 60% mass increase, causing immediate motor saturation and battery voltage collapse.</li>
+    <li><strong>Silicon Redundancy:</strong> The drone flight controller already features an ESP32-S3. Carrying two identical MCUs doubles power regulators and passive losses needlessly.</li>
+    <li><strong>Severe Motion Blur:</strong> The OV2640 rolling-shutter sensor indoor exposure time (1/30s) smears a 2 m/s mosquito across 40&ndash;50 pixels.</li>
+    <li><strong>Latency Bottleneck:</strong> Running TinyML object detection on an ESP32-S3 achieves only 3&ndash;5 FPS with 200ms latency, making real-time interception impossible.</li>
   </ul>
 
-  <div class="note">
-    <strong>Capability caveat:</strong> The ESP32-S3 can support <strong>lightweight embedded-vision experiments</strong>, but dependable recognition of tiny, fast-moving mosquitoes <strong>may require a more capable AI computer</strong>. Treat this board as an experimental starting point, <strong>not</strong> a proven mosquito-recognition solution.
-  </div>
 
   <div class="footer">
-    Source: Section 2 of <code>Mosquito_Hunting_Drone_8K_Project_Summary.docx</code>. All pages are self-contained HTML &mdash; open directly in a browser for offline use. No internet required.
+    Mosquito-Hunting Drone (Musquiteer) &mdash; Re-engineered Architecture &amp; Single-Path Build Plan. All pages are self-contained HTML for offline browsing.
   </div>
 </div>
 </body>
